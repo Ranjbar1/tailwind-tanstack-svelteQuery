@@ -16,7 +16,7 @@
 		<ul class="text-center text-gray-700">
 			{#each $query.data.results as { name, url }, index}
 				<li class="font-bold">{index + 1} : {name}</li>
-				<a class="bg-orange-200 text-violet-500 border-emerald-300 border rounded-xl p-1" href={url}
+				<a class="bg-orange-200 text-violet-500 border-emerald-300 border rounded-xl p-1" href={name}
 					>Go to {name}</a
 				>
 			{/each}

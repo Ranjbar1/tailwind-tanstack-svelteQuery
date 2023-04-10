@@ -13,5 +13,7 @@
 </script>
 
 <QueryClientProvider client={queryClient}>
+	<header> header<header/>
 	<slot />
+	<footer>footer<footer/>
 </QueryClientProvider>
