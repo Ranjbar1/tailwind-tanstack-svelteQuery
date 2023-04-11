@@ -1,6 +1,4 @@
-
-#  [`Visit Project Demo on Vercel (Link) `](https://tailwind-tanstack-svelte-query.vercel.app/)
-
+# [`Visit Project Demo on Vercel (Link) `](https://tailwind-tanstack-svelte-query.vercel.app/)
 
 # create-svelte
 

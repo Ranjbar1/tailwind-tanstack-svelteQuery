@@ -10,9 +10,8 @@
 		queryKey: ['pokemon'],
 
 		queryFn: async () => await getPokemon(data.id),
-		initialData: data.data,
+		initialData: data.data
 	});
-	
 </script>
 
 <!-- {JSON.stringify(data.data.abilities)} -->
@@ -29,14 +28,10 @@
 	{/each}
 </ul>
 
-
-
-
 <span> BAse base_experience:: </span>{$query.data.base_experience}
 
-{#each $query.data.game_indices as {game_index,version} ,index }
-<span>gameIndex :: </span>{game_index}
-<hr>
-{JSON.stringify(version)}
-	
+{#each $query.data.game_indices as { game_index, version }, index}
+	<span>gameIndex :: </span>{game_index}
+	<hr />
+	{JSON.stringify(version)}
 {/each}

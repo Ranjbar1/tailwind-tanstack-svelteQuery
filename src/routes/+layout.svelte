@@ -14,7 +14,9 @@
 	});
 </script>
 
-<QueryClientProvider client={queryClient}> <title>svelte-query app</title>
-	<div class="bg-slate-200 h-full absolute w-full  ">
-	<slot  /></div>
+<QueryClientProvider client={queryClient}>
+	<title>svelte-query app</title>
+	<div class="bg-slate-200 h-full absolute w-full">
+		<slot />
+	</div>
 </QueryClientProvider>

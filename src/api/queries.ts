@@ -6,10 +6,10 @@ const getAllPokemons = async () => {
 	return data;
 };
 
-export const getPokemon = async (pokemonID:number|string) =>{
-	const {data } = await API.get(`pokemon/${pokemonID}`)
-		// console.log(data);
-		return data
-}
+export const getPokemon = async (pokemonID: number | string) => {
+	const { data } = await API.get(`pokemon/${pokemonID}`);
+	// console.log(data);
+	return data;
+};
 
 export default getAllPokemons;

@@ -9,7 +9,6 @@
 </script>
 
 <div class="text-center">
-	
 	{#if $query.isLoading}
 		<h1>LOADING...</h1>
 	{:else if $query.status === 'success'}
@@ -17,9 +16,10 @@
 			{#each $query.data.results as { name, url }, index}
 				<li>
 					<div class="px-10 py-5 m-1 rounded-2xl border shadow-md">
-						<div class="font-bold inline-block ">{name}</div>
-						<a class="inline-block hover:bg-orange-500 hover:text-gray-950 hover:border-1 bg-gray-800 text-white border-emerald-300 border-2 rounded-xl p-1" href={name}
-							>Go to {name}</a
+						<div class="font-bold inline-block">{name}</div>
+						<a
+							class="inline-block hover:bg-orange-500 hover:text-gray-950 hover:border-1 bg-gray-800 text-white border-emerald-300 border-2 rounded-xl p-1"
+							href={name}>Go to {name}</a
 						>
 					</div>
 				</li>
