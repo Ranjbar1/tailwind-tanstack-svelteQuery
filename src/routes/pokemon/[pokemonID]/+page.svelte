@@ -2,7 +2,7 @@
 	// @ts-nocheck
 
 	import { createQuery } from '@tanstack/svelte-query';
-	import { getPokemon } from '../../api/queries';
+	import { getPokemon } from '../../../api/queries';
 	/** @type {import('./$types').PageData} */
 	export let data;
 
@@ -16,11 +16,12 @@
 
 <!-- {JSON.stringify(data.data.abilities)} -->
 <div>hello</div>
-{JSON.stringify($query.data.abilities)}
+<!-- {JSON.stringify($query.data.abilities)} -->
 {#each $query.data.abilities as { ability, is_hidden, slot }, index}
 	<hr />
 	<span>ability:</span>
 	{ability.name}
+	<span>is Hidden : {is_hidden} </span>
 {/each}
 <ul class="font-bold">
 	{#each $query.data.forms as form, index}
@@ -30,8 +31,14 @@
 
 <span> BAse base_experience:: </span>{$query.data.base_experience}
 
-{#each $query.data.game_indices as { game_index, version }, index}
+{#each $query.data.game_indices as { game_index, version: { name, url } }, index}
 	<span>gameIndex :: </span>{game_index}
 	<hr />
-	{JSON.stringify(version)}
+	<!-- {JSON.stringify(version)} -->
+	<li>
+		<div>
+			<span>{name}</span>
+			<a href={url}>go to version</a>
+		</div>
+	</li>
 {/each}
