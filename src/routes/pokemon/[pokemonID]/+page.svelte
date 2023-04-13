@@ -12,10 +12,11 @@
 		queryFn: async () => await getPokemon(data.id),
 		initialData: data.data
 	});
+	console.table(($query.data));
 </script>
 
 <!-- {JSON.stringify(data.data.abilities)} -->
-<div>hello</div>
+<div >hello</div>
 <!-- {JSON.stringify($query.data.abilities)} -->
 {#each $query.data.abilities as { ability, is_hidden, slot }, index}
 	<hr />
@@ -28,8 +29,18 @@
 		<li>{form.name}</li>
 	{/each}
 </ul>
-
+<img class="w-32 h-32 object-cover" src={$query.data.sprites.front_default} alt="">
 <span> BAse base_experience:: </span>{$query.data.base_experience}
+
+<ul>
+{#each $query.data.stats as {stat:{name} ,base_stat ,effort}, index}
+	
+<li>{name}: {base_stat} - {effort}:X</li>
+
+
+{/each}
+</ul>
+
 
 {#each $query.data.game_indices as { game_index, version: { name, url } }, index}
 	<span>gameIndex :: </span>{game_index}
