@@ -18,7 +18,7 @@
 
 <QueryClientProvider client={queryClient}>
 	<title>svelte-query app</title>
-	<Navbar/>
+	<Navbar />
 	<div class="bg-slate-200 h-full absolute w-full">
 		<slot />
 	</div>
