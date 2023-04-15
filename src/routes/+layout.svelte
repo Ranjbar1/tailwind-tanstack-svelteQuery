@@ -2,11 +2,9 @@
 	import { browser } from '$app/environment';
 	import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
 	import '../app.css';
-	// @ts-ignore
 	import Navbar from '$lib/Navbar.svelte';
-	// import { dev } from '$app/environment';
-	// import { inject } from '@vercel/analytics';
-	// inject({ mode: dev ? 'development' : 'production' });
+	import Footer from '$lib/Footer.svelte';
+
 	const queryClient = new QueryClient({
 		defaultOptions: {
 			queries: {
@@ -19,7 +17,8 @@
 <QueryClientProvider client={queryClient}>
 	<title>svelte-query app</title>
 	<Navbar />
-	<div class="bg-slate-200">
+	<div>
 		<slot />
 	</div>
+	<Footer />
 </QueryClientProvider>

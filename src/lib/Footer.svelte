@@ -1,11 +1,14 @@
-<div> 
+<script>
+	let date = new Date().getFullYear();
+</script>
+
+<div>
 	<footer
-		class="mt-8 fixed px-16 py-2 flex justify-between items-center bg-cyan-900 bottom-0 left-0 w-screen text-white font-bold"
+		class=" fixed px-16 py-2 flex justify-between items-center bg-gray-900 bottom-0 left-0 w-screen text-white font-bold"
 	>
 		<div class="flex items-center">
-			<p class="text-gray-400">&copy; 2022 Copyright :</p>
-			<p class="ml-1">Abolfazl Naser Ranjbar</p>
-		</div> 
+			<p>Copyright &copy; {date} Abolfazl Naser Ranjbar All Rights Reserved</p>
+		</div>
 		<div class="uppercase flex justify-end gap-5 items-center w-[16%]">
 			<!-- Linkedin -->
 			<a
