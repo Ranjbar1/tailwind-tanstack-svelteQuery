@@ -2,6 +2,8 @@
 	import { browser } from '$app/environment';
 	import { QueryClient, QueryClientProvider } from '@tanstack/svelte-query';
 	import '../app.css';
+	// @ts-ignore
+	import Navbar from '$lib/Navbar.svelte';
 	// import { dev } from '$app/environment';
 	// import { inject } from '@vercel/analytics';
 	// inject({ mode: dev ? 'development' : 'production' });
@@ -16,6 +18,7 @@
 
 <QueryClientProvider client={queryClient}>
 	<title>svelte-query app</title>
+	<Navbar/>
 	<div class="bg-slate-200 h-full absolute w-full">
 		<slot />
 	</div>
