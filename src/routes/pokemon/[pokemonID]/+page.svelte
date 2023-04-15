@@ -15,63 +15,45 @@
 	console.table($query.data);
 </script>
 
-<div class="flex justify-center items-center mt-20 bg-rose-400">
-	<div class="bg-red-300 w-[60%] px-4 mb-20">
-
-
-		<div class="hero min-h-screen bg-base-200">
-			<div class="hero-content flex-col lg:flex-row">
-			  <img src={$query.data.sprites.front_default} alt=""  class="max-w-sm rounded-lg shadow-2xl" />
-			  <div>
-				<!-- <h1 class="text-5xl font-bold">Box Office News!</h1> -->
-				{#each $query.data.forms as form, index}
-				<p class="py-6">{form.name}</p>
-			{/each}
-			  </div>
+<div class="flex sm:w-4/5 px-2 mx-auto justify-center">
+	<div class="w-4/5">
+		<div class="bg-base-200">
+			<div class="lg:flex-row">
+				<img
+					src={$query.data.sprites.front_default}
+					alt=""
+					class="max-w-sm rounded-lg shadow-2xl"
+				/>
+				<div>
+					{#each $query.data.forms as { name }}
+						<p class="py-1">{name}</p>
+					{/each}
+				</div>
 			</div>
-		  </div>
-		<!-- <div class="flex justify-center items-center">
-			<h1 id="pokemons-name" class="font-bold">
-				{#each $query.data.forms as form, index}
-					<p class="py-6">{form.name}</p>
-				{/each}
-			</h1>
-			<img class=" object-cover w-[80%]" src={$query.data.sprites.front_default} alt="" />
-		</div> -->
-		{#each $query.data.abilities as { ability, is_hidden, slot }, index}
-			<div class="flex w-[26%]">
+		</div>
+
+		{#each $query.data.abilities as { ability }}
+			<div class="flex">
 				<span class="font-bold">Ability: </span>
 				<span class="ml-2"> {ability.name}</span>
 			</div>
-
-			<div class="flex w-[26%]">
-				<span class="font-bold">is Hidden : </span>
-				<span class="ml-2"> {is_hidden}</span>
-			</div>
 		{/each}
 
-		<div class="flex w-[30%]">
-			<span class="font-bold">BAse base_experience: </span>
-			<span class="ml-2"> {$query.data.base_experience}</span>
-		</div>
-
 		<div class="my-8">
-			{#each $query.data.stats as { stat: { name }, base_stat, effort }, index}
-				<div id="Progress Bar" class="flex items-center my-2">
-					<div class="w-[20%] text-base font-medium">{name} :</div>
+			{#each $query.data.stats as { stat: { name }, base_stat }}
+				<div id="Progress Bar" class="my-2">
+					<div class=" min-w-fit font-medium">{name}:</div>
 					<div class="w-full bg-gray-200 rounded-full h-2.5">
 						<div
-							class="bg-blue-600 h-2.5 rounded-full"
+							class="bg-gray-600 h-2.5 rounded-full"
 							style={`width: ${base_stat > 100 ? 100 : base_stat}%`}
 						/>
 					</div>
 				</div>
-
-				<!-- <p>{effort}:X</p> -->
 			{/each}
 		</div>
 
-		<table class="w-full text-sm text-left text-gray-500">
+		<table class="w-fit text-sm text-left text-gray-500">
 			<thead class="text-xs text-gray-700 uppercase bg-gray-50">
 				<tr>
 					<th scope="col" class="px-6 py-3"> Game Index </th>
@@ -79,16 +61,8 @@
 					<th scope="col" class="px-6 py-3"> Details </th>
 				</tr>
 			</thead>
-			{#each $query.data.game_indices as { game_index, version: { name, url } }, index}
+			{#each $query.data.game_indices as { game_index, version: { name, url } }}
 				<tbody>
-					<!-- <div class="flex justify-between my-4">
-				<div>	<span>Game Index:</span> {   Number(game_index)    }
-				</div>
-			
-						<span> Version : {name}  </span>
-						
-				</div> -->
-
 					<tr class="bg-white dark:bg-gray-800">
 						<td class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
 							{Number(game_index)}

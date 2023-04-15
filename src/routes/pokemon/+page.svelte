@@ -13,7 +13,7 @@
 	{#if $query.isLoading}
 		<h1>LOADING...</h1>
 	{:else if $query.status === 'success'}
-		<div class="flex justify-between flex-wrap p-24 gap-2">
+		<div class="flex justify-between flex-wrap gap-2">
 			{#each $query.data.results as { name }}
 				<Card {name} url={`/pokemon/${name}`} />
 
