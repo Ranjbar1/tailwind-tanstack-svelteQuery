@@ -1,21 +1,27 @@
-<div class="sticky">
-	<header
-		class=" px-16 py-2 flex justify-between items-center bg-cyan-900 fixed top-0 left-0 w-screen text-white font-bold"
-	>
-		<p class="w-[20%] text-xl">Pokemons</p>
-		<div class="uppercase flex justify-between items-center w-[20%]">
-			<a href="/pokemon"
-				class=" transition bg-cyan-900 px-3 flex justify-center items-center hover:bg-slate-900 py-4"
-				>portfolid</a
-			>
-			<a href="/about"
-				class=" transition bg-cyan-900 px-3 flex justify-center items-center hover:bg-slate-900 py-4"
-				>About</a
-			>
-			<a href="/contact"
-				class=" transition bg-cyan-900 px-3 flex justify-center items-center hover:bg-slate-900 py-4"
-				>Contact</a
+<script>
+	$: isOpen = false;
+</script>
+
+<header class=" bg-gray-900 text-white sm:flex sm:justify-between">
+	<div class="flex items-center justify-between px-5 py-3">
+		<div><img class="h-8" src="/favicon.png" alt="Logo" /></div>
+		<div class="sm:hidden">
+			<button on:click={() => (isOpen = !isOpen)} class="flex"
+				><img class="h-8 w-8" src="/menu-icon.svg" alt="" /></button
 			>
 		</div>
-	</header>
-</div>
+	</div>
+	<div class=" {isOpen ? 'block' : 'hidden'} px-2 pt-2 pb-4 sm:flex">
+		<a class="block text-white px-2 py-1 font-semibold rounded hover:bg-gray-700" href="/about"
+			>About
+		</a><a
+			class="block text-white px-2 py-1 font-semibold rounded hover:bg-gray-700 sm:px-3"
+			href="#"
+			>شسی
+		</a><a
+			class="block text-white px-2 py-1 font-semibold rounded hover:bg-gray-700 sm:px-3"
+			href="#"
+			>شسی
+		</a>
+	</div>
+</header>
