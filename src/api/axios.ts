@@ -1,7 +1,7 @@
 import { env } from '$env/dynamic/public';
 import axios from 'axios';
 
-const API_KEY = env.PUBLIC_API_KEY;
+const API_KEY = env.PUBLIC_API_KEY || process.env.PUBLIC_API_KEY;
 console.log(API_KEY);
 
 const baseURL = 'https://pokeapi.co/api/v2/';
