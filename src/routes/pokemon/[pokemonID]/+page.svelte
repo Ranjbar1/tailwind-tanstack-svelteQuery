@@ -8,32 +8,33 @@
 
 	const query = createQuery({
 		queryKey: ['pokemon'],
-
 		queryFn: async () => await getPokemon(data.id),
 		initialData: data.data
 	});
-	console.table($query.data);
+	let { name, height, base_experience } = $query.data;
+	// console.table($query.data);
 </script>
 
 <div class="flex sm:w-4/5 px-2 mx-auto justify-center">
 	<div class="w-4/5">
 		<div class="bg-base-200">
-			<div class="lg:flex-row">
+			<div class=" m-8 flex flex-row justify-around lg:flex-row">
 				<img
 					src={$query.data.sprites.front_default}
 					alt=""
-					class="max-w-sm rounded-lg shadow-2xl"
+					class="w-40 p-4 rounded-lg shadow-2xl hover:p-0"
 				/>
 				<div>
-					{#each $query.data.forms as { name }}
-						<p class="py-1">{name}</p>
-					{/each}
+					<p class=" text-lg font-semibold py-1">{name}</p>
+					<span class="font-semibold">Height:</span>
+					{height}
+					<p class="py-1 font-semibold">XP: {base_experience}</p>
 				</div>
 			</div>
 		</div>
 
 		{#each $query.data.abilities as { ability }}
-			<div class="flex">
+			<div class="flex m-8">
 				<span class="font-bold">Ability: </span>
 				<span class="ml-2"> {ability.name}</span>
 			</div>
@@ -42,7 +43,7 @@
 		<div class="my-8">
 			{#each $query.data.stats as { stat: { name }, base_stat }}
 				<div id="Progress Bar" class="my-2">
-					<div class=" min-w-fit font-medium">{name}:</div>
+					<div class=" min-w-fit font-medium">{name}: {Number(base_stat) || 'N/A'}</div>
 					<div class="w-full bg-gray-200 rounded-full h-2.5">
 						<div
 							class="bg-gray-600 h-2.5 rounded-full"
@@ -74,7 +75,7 @@
 							<a
 								href={url}
 								class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded"
-								>go to version</a
+								>See version</a
 							>
 						</td>
 					</tr>

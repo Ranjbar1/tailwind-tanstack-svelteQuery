@@ -1,3 +1,8 @@
+<script>
+	import Map from '$lib/Map.svelte';
+	import { fetchDallE } from '../api/axios';
+</script>
+
 <div class="mb-20">
 	<div
 		class="flex flex-col lg:flex-row-reverse justify-around rounded-xl
@@ -44,7 +49,7 @@
 	<section class="bg-white rounded-lg flex flex-col items-center my-16 shadow-lg">
 		<div>
 			<img src="/favicon.png" alt="" />
-			<h1>sections</h1>
 		</div>
 	</section>
+	<section class="my-5 border rounded-lg overflow-hidden shadow-lg"><Map /></section>
 </div>
