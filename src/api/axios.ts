@@ -30,7 +30,7 @@ export const fetchDallE = async (description = '', n = 1) => {
 		const { data } = await DALL_E_API.post('', {
 			prompt: description,
 			n,
-			size: '1024x1024'
+			size: '512x512'
 		});
 		return data;
 	} catch (error) {
