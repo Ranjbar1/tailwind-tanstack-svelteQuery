@@ -20,6 +20,11 @@
 	>
 		<a
 			class="block text-white px-2 py-1 font-semibold rounded hover:bg-gray-700 sm:px-3"
+			href="/dall_e"
+			>Dall-E (Image Generator)
+		</a>
+		<a
+			class="block text-white px-2 py-1 font-semibold rounded hover:bg-gray-700 sm:px-3"
 			href="/pokemon"
 			>Pokemons
 		</a><a class="block text-white px-2 py-1 font-semibold rounded hover:bg-gray-700" href="/about"
