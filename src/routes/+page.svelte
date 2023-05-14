@@ -1,6 +1,14 @@
 <script>
 	import Map from '$lib/Map.svelte';
 	import { fetchDallE } from '../api/axios';
+	import { FpjsProvider } from '@fingerprintjs/fingerprintjs-pro-svelte';
+	import VisitorData from '../lib/VisitorData.svelte';
+
+	const options = {
+		loadOptions: {
+			apiKey: 'SWFalo2OEu5sJpivNFdu'
+		}
+	};
 </script>
 
 <div class="mb-20">
@@ -51,5 +59,10 @@
 			<img src="/favicon.png" alt="" />
 		</div>
 	</section>
-	<section class="my-5 border rounded-lg overflow-hidden shadow-lg"><Map /></section>
+	<!-- <section class="my-5 border rounded-lg overflow-hidden shadow-lg"><Map /></section> -->
 </div>
+<section>
+	<FpjsProvider {options}>
+		<VisitorData />
+	</FpjsProvider>
+</section>

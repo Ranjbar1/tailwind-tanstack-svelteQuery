@@ -32,6 +32,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@fingerprintjs/fingerprintjs-pro-svelte": "^1.2.1",
 		"@tanstack/svelte-query": "^4.27.0",
 		"@types/leaflet": "^1.9.3",
 		"@vercel/analytics": "^0.1.11",
